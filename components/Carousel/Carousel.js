@@ -17,3 +17,12 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+const carouselContainer = document.querySelector('div.carousel-container');
+
+
+
+
+const mountain = document.createElement('img');
+mountain.src = './assets/carousel/mountains.jpeg';
+carouselContainer.appendChild(mountain);
