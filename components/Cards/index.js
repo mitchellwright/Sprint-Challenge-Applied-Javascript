@@ -49,6 +49,7 @@ const cardMaker = cardData => {
     cardParent.appendChild(authorParent);
 
     let imageContainer = document.createElement('img');
+    imageContainer.classList.add('img-container');
     imageContainer.src = cardData.authorPhoto;
     authorParent.appendChild(imageContainer);
 
