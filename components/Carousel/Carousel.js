@@ -48,7 +48,23 @@ const rightButton = document.createElement('div');
 rightButton.classList.add('right-button');
 carousel.appendChild(rightButton);
 
+const carouselImages = document.querySelectorAll('div.carousel > img');
 
+let currentIndex = 0;
+carouselImages[currentIndex].style.display = 'block';
+
+
+document.querySelector('.right-button').addEventListener('click', changeImage);
+document.querySelector('.left-button').addEventListener('click', changeImage);
+function changeImage(e) {
+  if(e.target.classList[0] === 'right-button') {
+    currentIndex === 3 ? currentIndex = 0 : currentIndex++;
+    console.log(currentIndex);
+  } else if(e.target.classList[0] === 'left-button') {
+    currentIndex === 0 ? currentIndex = 3 : currentIndex--;
+    console.log(currentIndex);
+  }
+}
 
 
 
