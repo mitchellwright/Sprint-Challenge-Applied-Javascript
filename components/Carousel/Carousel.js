@@ -50,7 +50,9 @@ carousel.appendChild(rightButton);
 
 const carouselImages = document.querySelectorAll('div.carousel > img');
 
+// Set currentIndex to track which image should be displaying
 let currentIndex = 0;
+// Set initial image to display
 carouselImages[currentIndex].style.display = 'block';
 
 
@@ -58,16 +60,12 @@ document.querySelector('.right-button').addEventListener('click', changeImage);
 document.querySelector('.left-button').addEventListener('click', changeImage);
 function changeImage(e) {
   if(e.target.classList[0] === 'right-button') {
+    carouselImages[currentIndex].style.display = 'none';
     currentIndex === 3 ? currentIndex = 0 : currentIndex++;
-    console.log(currentIndex);
+    carouselImages[currentIndex].style.display = 'block';
   } else if(e.target.classList[0] === 'left-button') {
+    carouselImages[currentIndex].style.display = 'none';
     currentIndex === 0 ? currentIndex = 3 : currentIndex--;
-    console.log(currentIndex);
+    carouselImages[currentIndex].style.display = 'block';
   }
 }
-
-
-
-// const mountain = document.createElement('img');
-// mountain.src = './assets/carousel/mountains.jpeg';
-// carouselContainer.appendChild(mountain);
