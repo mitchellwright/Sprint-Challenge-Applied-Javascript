@@ -18,11 +18,40 @@
   </div>
 */
 
+const images = ['./assets/carousel/mountains.jpeg',
+                './assets/carousel/computer.jpeg',
+                './assets/carousel/trees.jpeg',
+                './assets/carousel/turntable.jpeg'];
+
+const carouselCardMaker = image => {
+  let newImage = document.createElement('img');
+  newImage.src = image;
+
+  return newImage;
+};
+
 const carouselContainer = document.querySelector('div.carousel-container');
 
+const carousel = document.createElement('div');
+carousel.classList.add('carousel');
+carouselContainer.appendChild(carousel);
+
+const leftButton = document.createElement('div');
+leftButton.classList.add('left-button');
+carousel.appendChild(leftButton);
+
+images.forEach( image => {
+  carousel.appendChild(carouselCardMaker(image));
+});
+
+const rightButton = document.createElement('div');
+rightButton.classList.add('right-button');
+carousel.appendChild(rightButton);
 
 
 
-const mountain = document.createElement('img');
-mountain.src = './assets/carousel/mountains.jpeg';
-carouselContainer.appendChild(mountain);
+
+
+// const mountain = document.createElement('img');
+// mountain.src = './assets/carousel/mountains.jpeg';
+// carouselContainer.appendChild(mountain);
